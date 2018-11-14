@@ -9,7 +9,12 @@
 目的：服务端渲染 + 前后端分离 + 全栈知识梳理
 
 ```
-npm run build
+// 以开发模式启动带热加载特性的 Nuxt 服务：
+npm install
 
-npm start
+npm run dev
+
+//部署 Nuxt.js 服务端渲染的应用
+nuxt build
+nuxt start
 ```
