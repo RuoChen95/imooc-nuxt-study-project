@@ -1,7 +1,7 @@
 <template>
-  <div class="exp">
+  <div class="blog">
     <navbar></navbar>
-    <p>experience</p>
+    {{id}}
   </div>
 </template>
 <script>
@@ -11,12 +11,17 @@
       Navbar,
     },
     data() {
-      return {}
+      return {
+        id: ''
+      }
+    },
+    mounted() {
+      this.id = this.$route.query.articleId;
     }
   }
 </script>
 <style scoped lang="css" type="text/css">
-  div.exp {
+  div.blog {
     width: 720px;
     margin: 0 auto;
   }

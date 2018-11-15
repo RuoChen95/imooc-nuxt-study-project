@@ -1,8 +1,6 @@
 # imooc-nuxt-study-project
 
-这个课程是[上一个](https://github.com/RuoChen95/imooc-express-movie-project)repository学习的继续。
-
-课程https://coding.imooc.com/learn/list/119.html
+这个[课程](https://coding.imooc.com/learn/list/119.html)是[上一个repository](https://github.com/RuoChen95/imooc-express-movie-project)学习的继续。
 
 使用技术：Vue(Nuxt)，Node(Koa)
 

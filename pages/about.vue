@@ -1,6 +1,7 @@
 <template>
   <div class="about">
     <navbar></navbar>
+    <p>about</p>
   </div>
 </template>
 <script>

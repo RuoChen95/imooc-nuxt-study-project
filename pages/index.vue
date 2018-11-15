@@ -3,10 +3,10 @@
     <navbar></navbar>
 
     <div class="content">
-      <article class="section" v-for="(blog, index) in blogData">
-        <h1 class="title">{{blog.title}}</h1>
+      <article class="section" v-for="(blog, index) in blogData" :key="index">
+        <h1 class="title" @click="readMore(blog)">{{blog.title}}</h1>
         <p class="description">{{blog.description}}</p>
-        <p class="readMore">READ MORE</p>
+        <p class="readMore" @click="readMore(blog)">READ MORE</p>
       </article>
     </div>
   </div>
@@ -20,28 +20,27 @@ export default {
   },
   data() {
     return {
-      blogData: [
-        {
-          "title": "Lxdjsl",
-          "type": 2,
-          "content": "contentcontentcontentcontent",
-          "description": "descriptiondescriptiondescription"
-        },
-        {
-          "title": "Hedqiq",
-          "type": 1,
-          "content": "Hedqiq Cygmi Cleynbdts Srmee Vxptuxfx",
-          "description": "descriptiondescriptiondescription"
-        },
-        {
-          "title": "Ixiwfn",
-          "type": 2,
-          "content": "Ixiwfn Wowkt Carj Dfhajsjo Wpksc Bwdeezk Nvekqgnk",
-          "description": "descriptiondescriptiondescription"
-        },
-      ]
+      blogData: []
     }
-  }
+  },
+  mounted() {
+    this.init();
+  },
+  methods: {
+    async init() {
+      this.getblogData();
+    },
+    async getblogData() {
+      let res = await this.$axios.$get(`http://rap2api.taobao.org/app/mock/117338//getBlogList`)
+      this.blogData = res.blogArray
+    },
+    readMore(blog) {
+      this.$router.push({
+        path: '/blog',
+        query: { articleId: blog.articleId }
+      })
+    }
+  },
 }
 </script>
 
